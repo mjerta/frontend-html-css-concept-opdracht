@@ -35,6 +35,8 @@
   /*default-unit*/
   --default-height-1: 30rem;
   --default-height-2: 35rem;
+  --default-padding-button: 1rem;
+  --default-margin: 3rem;
 
 }
 
@@ -87,28 +89,36 @@ header {
   flex-direction: column;
 
   & nav {
-    justify-items: flex-start;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     & ul {
       display: flex;
       column-gap: 3rem;
       list-style: none;
+      font-weight: 800;
+      color: #fff;
+
+      & li {
+        padding: var(--default-padding-button) 0;
+      }
     }
   }
-}
 
-.cta {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-grow: 1;
-}
+  .cta {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+  }
 
-.inner-cta {
-  flex-basis: 80%;
-  flex-shrink: 1;
+  .inner-cta {
+    flex-shrink: 1;
+
+    h1 {
+      margin-top: var(--default-margin)
+    }
+  }
 }
 
 
@@ -217,4 +227,15 @@ footer {
   html {
     font-size: 16px;
   }
+
+  header {
+    & nav {
+      justify-content: flex-end;
+    }
+
+    .inner-cta {
+      flex-basis: 80%;
+    }
+  }
+
 }
