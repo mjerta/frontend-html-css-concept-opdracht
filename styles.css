@@ -2,20 +2,20 @@
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
 *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
 
-    --color-purple: #5722CD;
-    --color-blue: #4845E4;
-    --color-pink: #ED4385;
-    --color-black: #0C0C0C;
-    --color-light-purple: #F2F0FF;
-    --color-light-grey: #F2F0FF;
-    --color-grey: #7A7A7A;
+  --color-purple: #5722CD;
+  --color-blue: #4845E4;
+  --color-pink: #ED4385;
+  --color-black: #0C0C0C;
+  --color-light-purple: #F2F0FF;
+  --color-light-grey: #F2F0FF;
+  --color-grey: #7A7A7A;
 }
 
 /*////////////////////////
@@ -34,6 +34,14 @@
 
 
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
