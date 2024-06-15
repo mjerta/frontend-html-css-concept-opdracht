@@ -50,11 +50,12 @@ button {
 
 
   /*default-unit*/
-  --default-height-1: 30rem;
-  --default-height-2: 35rem;
+  --default-height-1: 35rem;
+  --default-height-2: 40rem;
   --default-padding-1: 1rem;
   --default-padding-2: 1.5rem;
-  --default-margin: 3rem;
+  --default-padding-3: 2rem;
+  --default-margin: 5rem;
 
 }
 
@@ -92,6 +93,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------- 3.1 Reusables ----------------------- */
+
+button {
+  padding: var(--default-padding-1) var(--default-padding-3);
+  background-color: var(--color-pink);
+  border-radius: 2rem;
+  box-shadow: 0 2px 10px var(--color-black);
+}
 
 
 /* --------------- 3.2 Other --------------------------- */
