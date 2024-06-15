@@ -182,6 +182,7 @@ main {
   flex-direction: column;
 
   & section {
+    padding: var(--default-padding-1);
     display: flex;
     flex-basis: var(--default-height-1);
     border: 2px solid;
@@ -196,8 +197,16 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-purple);
+    text-align: center;
+
+    h3 {
+      font-size: 1.6rem;
+    }
 
     & article {
+      flex-basis: 40rem;
+      flex-shrink: 1;
       flex-direction: column;
       align-items: center;
     }
