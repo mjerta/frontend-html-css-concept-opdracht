@@ -196,12 +196,18 @@ main {
   & .intro {
     display: flex;
     justify-content: center;
-    align-items: center;
     color: var(--color-purple);
     text-align: center;
 
+
     h3 {
+      padding: var(--default-padding-1) 0;
       font-size: 1.6rem;
+    }
+
+    h3:first-of-type {
+      padding: 0;
+      margin-top: var(--default-margin);
     }
 
     & article {
