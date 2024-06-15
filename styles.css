@@ -114,6 +114,8 @@ header {
 
     & ul {
       display: flex;
+      flex-grow: 1;
+      justify-content: space-evenly;
       column-gap: 3rem;
       list-style: none;
       font-weight: 800;
@@ -254,7 +256,9 @@ footer {
 
   header {
     & nav {
-      justify-content: flex-end;
+      & ul {
+        justify-content: flex-end;
+      }
     }
 
     .inner-cta {
