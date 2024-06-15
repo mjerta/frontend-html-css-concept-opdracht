@@ -50,8 +50,8 @@ button {
 
 
   /*default-unit*/
-  --default-height-1: 35rem;
-  --default-height-2: 40rem;
+  --default-height-1: 40rem;
+  --default-height-2: 45rem;
   --default-padding-1: 1rem;
   --default-padding-2: 1.5rem;
   --default-padding-3: 2rem;
@@ -99,6 +99,8 @@ button {
   background-color: var(--color-pink);
   border-radius: 2rem;
   box-shadow: 0 2px 10px var(--color-black);
+  align-self: center;
+  cursor: pointer;
 }
 
 
@@ -132,6 +134,7 @@ header {
         padding: var(--default-padding-1) 0;
       }
     }
+
   }
 
   .cta {
@@ -143,6 +146,8 @@ header {
 
   .inner-cta {
     flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
 
     h1 {
       margin-top: var(--default-margin)
@@ -152,6 +157,20 @@ header {
       padding: var(--default-padding-2) 0;
       font-weight: 300;
     }
+
+    .visual {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      img {
+        height: 7em;
+      }
+
+    }
+
+
   }
 }
 
