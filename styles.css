@@ -38,6 +38,18 @@ button {
 
 }
 
+input, textarea {
+  margin: 0;
+  /*padding: 0;*/
+  border: none;
+  font: inherit;
+  /*color: inherit;*/
+  /*background: none;*/
+  box-shadow: none;
+  outline: none;
+  resize: none; /* Specifically for textarea */
+}
+
 :root {
 
   --color-purple: #5722CD;
@@ -337,14 +349,46 @@ main {
   }
 
   & .feedback {
+    background-color: var(--color-purple);
     flex-basis: var(--default-height-2);
     display: flex;
     justify-content: center;
-    align-items: center;
 
     form {
+      margin-top: var(--default-margin-1);
+      flex-basis: 50rem;
       display: flex;
       flex-direction: column;
+      color: #fff;
+
+      h1, h5 {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h5 {
+        padding: var(--default-padding-1) 0;
+        font-weight: 300;
+      }
+
+      label {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+
+      input, textarea {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      button {
+        margin: var(--default-padding-3) 0;
+        padding: var(--default-padding-1) var(--default-padding-4);
+      }
+
     }
   }
 }
