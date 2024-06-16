@@ -78,7 +78,6 @@ html {
   font-size: 12px;
 }
 
-
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 body {
@@ -95,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 .wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
 }
@@ -110,7 +109,6 @@ button {
   align-self: center;
   cursor: pointer;
 }
-
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -142,7 +140,6 @@ header {
         padding: var(--default-padding-3) 0;
       }
     }
-
   }
 
   .cta {
@@ -177,8 +174,6 @@ header {
       }
 
     }
-
-
   }
 }
 
@@ -246,7 +241,6 @@ main {
       & article {
         flex-direction: column-reverse;
 
-
         & .col-text {
           flex-basis: 50%;
         }
@@ -273,11 +267,8 @@ main {
           content: '';
           height: 5px;
           width: 100%;
-          background-color: red;
-          background: url("./assets/squiggle_line.svg");
-          background-repeat: no-repeat;
+          background: url("./assets/squiggle_line.svg") no-repeat;
           background-size: contain;
-
         }
 
         p {
@@ -288,7 +279,6 @@ main {
           font-weight: 600;
           text-transform: uppercase;
         }
-
       }
     }
 
@@ -305,25 +295,23 @@ main {
     flex-basis: var(--default-height-2);
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: var(--default-padding-5);
     gap: 2rem;
     flex-wrap: wrap;
 
     .card {
       padding: var(--default-padding-3);
       flex-basis: 23rem;
-      height: 23rem;
+      min-height: 23rem;
       border: 1px solid var(--color-purple);
       flex-direction: column;
       color: var(--color-grey);
       box-shadow: 2px 7px 10px rgba(122, 122, 122, 0.4);
 
-
       .visual {
         & img {
           height: 4rem;
         }
-
       }
 
       h2 {
@@ -331,10 +319,7 @@ main {
         color: var(--color-purple);
         text-transform: capitalize;
       }
-
-
     }
-
   }
 
   & .feedback {
@@ -377,7 +362,6 @@ main {
         margin: var(--default-padding-3) 0;
         padding: var(--default-padding-1) var(--default-padding-4);
       }
-
     }
   }
 }
@@ -412,7 +396,6 @@ footer {
     }
   }
 
-
   main {
     .portfolio-wrapper {
       & .portfolio {
@@ -426,7 +409,6 @@ footer {
       }
 
       & .portfolio:nth-child(even) {
-
         article {
           flex-direction: row-reverse;
         }
@@ -441,5 +423,4 @@ footer {
       }
     }
   }
-
 }
