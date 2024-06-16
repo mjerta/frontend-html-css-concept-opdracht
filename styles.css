@@ -139,7 +139,7 @@ header {
       font-weight: 800;
 
       & li {
-        padding: var(--default-padding-1) 0;
+        padding: var(--default-padding-3) 0;
       }
     }
 
