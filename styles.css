@@ -55,6 +55,8 @@ button {
   --default-padding-1: 1rem;
   --default-padding-2: 1.5rem;
   --default-padding-3: 2rem;
+  --default-padding-4: 4rem;
+  --default-padding-5: 5rem;
   --default-margin-1: 5rem;
   --default-margin-2: 4rem;
   --default-margin-3: 3rem;
@@ -184,6 +186,10 @@ main {
   display: flex;
   flex-direction: column;
 
+  a {
+    color: var(--color-purple);
+  }
+
   & section {
     padding: var(--default-padding-1);
     display: flex;
@@ -225,40 +231,71 @@ main {
 
       & p {
         margin-top: var(--default-margin-2);
-
-        & a {
-          color: var(--color-purple);
-        }
       }
     }
   }
 
-  & .portfolio {
-    flex-basis: auto; /* default value */
+  .portfolio-wrapper {
+    padding: var(--default-padding-5) 0;
+    background-color: var(--color-light-grey);
 
-    & article {
-      flex-direction: column-reverse;
+    & .portfolio {
+      flex-basis: auto; /* default value */
+
+      & article {
+        flex-direction: column-reverse;
 
 
-      & .col-text {
-        flex-basis: 50%;
-      }
+        & .col-text {
+          flex-basis: 50%;
+        }
 
-      & .col-img {
-        margin-top: var(--default-margin-2);
-        flex-basis: 50%;
+        & .col-img {
+          margin-top: var(--default-margin-2);
+          flex-basis: 50%;
 
-        & img {
+          & img {
+            width: 100%;
+            box-shadow: 0 7px 20px var(--color-grey);
+          }
+        }
+
+        h2 {
+          position: relative;
+          padding: var(--default-padding-3) 0;
+        }
+
+        h2::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          height: 5px;
           width: 100%;
+          background-color: red;
+          background: url("./assets/squiggle_line.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+
         }
+
+        p {
+          padding: var(--default-padding-3) 0;
+        }
+
+        a {
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
       }
     }
-  }
 
-  & .portfolio:nth-of-type(2) {
-    & article {
-      & .col-img {
-        margin-top: var(--default-margin-1);
+    & .portfolio:nth-of-type(1) {
+      & article {
+        & .col-img {
+          margin-top: 0;
+        }
       }
     }
   }
@@ -330,17 +367,25 @@ footer {
 
 
   main {
-    & .portfolio {
-      & article {
-        flex-direction: row;
-      }
-    }
+    .portfolio-wrapper {
+      & .portfolio {
+        & article {
+          flex-direction: row;
 
-    & .portfolio:nth-child(odd) {
-
-      article {
-        flex-direction: row-reverse;
+          .col-text {
+            padding: var(--default-padding-4);
+          }
+        }
       }
+
+      & .portfolio:nth-child(even) {
+
+        article {
+
+          flex-direction: row-reverse;
+        }
+      }
+
     }
   }
 
