@@ -194,7 +194,6 @@ main {
     padding: var(--default-padding-1);
     display: flex;
     border: 2px solid;
-    overflow: hidden;
 
     & article {
       display: flex;
@@ -305,23 +304,36 @@ main {
     display: flex;
     justify-content: center;
     padding: 2rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
     border: 2px solid;
 
     .card {
-      flex-basis: 20rem;
-      border: 2px solid;
+      padding: var(--default-padding-3);
+      flex-basis: 23rem;
+      height: 23rem;
+      border: 1px solid var(--color-purple);
       flex-direction: column;
+      color: var(--color-grey);
+      box-shadow: 2px 7px 10px rgba(122, 122, 122, 0.4);
+
+
+      .visual {
+        & img {
+          height: 4rem;
+        }
+
+      }
+
+      h2 {
+        padding: var(--default-padding-1) 0;
+        color: var(--color-purple);
+        text-transform: capitalize;
+      }
+
 
     }
 
-    & img {
-      height: 10px;
-    }
   }
 
   & .feedback {
@@ -381,11 +393,17 @@ footer {
       & .portfolio:nth-child(even) {
 
         article {
-
           flex-direction: row-reverse;
         }
       }
+    }
 
+    .experience {
+      .card {
+        flex-basis: 20rem;
+        flex-grow: 1;
+        min-height: 20rem;
+      }
     }
   }
 
