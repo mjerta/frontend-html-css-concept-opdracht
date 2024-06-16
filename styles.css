@@ -40,18 +40,13 @@ button {
 
 input, textarea {
   margin: 0;
-  /*padding: 0;*/
   border: none;
-  font: inherit;
-  /*color: inherit;*/
-  /*background: none;*/
   box-shadow: none;
   outline: none;
   resize: none; /* Specifically for textarea */
 }
 
 :root {
-
   --color-purple: #5722CD;
   --color-blue: #4845E4;
   --color-pink: #ED4385;
@@ -59,7 +54,6 @@ input, textarea {
   --color-light-purple: #F2F0FF;
   --color-light-grey: #F2F0FF;
   --color-grey: #7A7A7A;
-
 
   /*default-unit*/
   --default-height-1: 40rem;
@@ -72,8 +66,6 @@ input, textarea {
   --default-margin-1: 5rem;
   --default-margin-2: 4rem;
   --default-margin-3: 3rem;
-
-
 }
 
 a {
@@ -104,7 +96,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ------------------------------- 3. Layout --------------------------------------- */
 .wrapper {
   max-width: 1200px;
-  border: 2px solid;
   display: flex;
   flex-direction: column;
 }
@@ -205,7 +196,6 @@ main {
   & section {
     padding: var(--default-padding-1);
     display: flex;
-    border: 2px solid;
 
     & article {
       display: flex;
@@ -318,7 +308,6 @@ main {
     padding: 2rem;
     gap: 2rem;
     flex-wrap: wrap;
-    border: 2px solid;
 
     .card {
       padding: var(--default-padding-3);
