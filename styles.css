@@ -57,6 +57,8 @@ button {
   --default-padding-3: 2rem;
   --default-margin-1: 5rem;
   --default-margin-2: 4rem;
+  --default-margin-3: 3rem;
+
 
 }
 
@@ -185,7 +187,6 @@ main {
   & section {
     padding: var(--default-padding-1);
     display: flex;
-    flex-basis: var(--default-height-1);
     border: 2px solid;
     overflow: hidden;
 
@@ -195,6 +196,7 @@ main {
   }
 
   & .intro {
+    flex-basis: var(--default-height-1);
     display: flex;
     justify-content: center;
     text-align: center;
@@ -232,14 +234,18 @@ main {
   }
 
   & .portfolio {
+    flex-basis: auto; /* default value */
+
     & article {
-      flex-wrap: wrap;
+      flex-direction: column-reverse;
+
 
       & .col-text {
         flex-basis: 50%;
       }
 
       & .col-img {
+        margin-top: var(--default-margin-2);
         flex-basis: 50%;
 
         & img {
@@ -249,10 +255,11 @@ main {
     }
   }
 
-  & .portfolio:nth-child(odd) {
-
-    article {
-      flex-direction: row-reverse;
+  & .portfolio:nth-of-type(2) {
+    & article {
+      & .col-img {
+        margin-top: var(--default-margin-1);
+      }
     }
   }
 
@@ -318,6 +325,22 @@ footer {
 
     .inner-cta {
       flex-basis: 80%;
+    }
+  }
+
+
+  main {
+    & .portfolio {
+      & article {
+        flex-direction: row;
+      }
+    }
+
+    & .portfolio:nth-child(odd) {
+
+      article {
+        flex-direction: row-reverse;
+      }
     }
   }
 
