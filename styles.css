@@ -404,7 +404,10 @@ main {
       padding: var(--default-padding-3);
       background-color: #fff;
       flex-basis: 23rem;
+      /* I want to use this flex-basis espacially when using the flex-wrap so with every wrap it will go back to this size
+            */
       min-height: 23rem;
+      max-width: 29rem; /* I want this element to grow but not grow more then this */
       border: 1px solid var(--color-purple);
       flex-direction: column;
       color: var(--color-grey);
