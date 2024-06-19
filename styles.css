@@ -327,13 +327,11 @@ main {
         flex-direction: column-reverse;
 
         & .col-text {
-          flex-basis: 50%;
           z-index: 1;
         }
 
         & .col-img {
-          margin-top: var(--default-margin-2);
-          flex-basis: 50%;
+          margin-top: var(--default-margin-3);
           z-index: 1;
 
           & img {
@@ -522,7 +520,7 @@ footer {
   main {
 
     & section {
-      padding: var(--default-padding-4);
+      padding: var(--default-padding-1);
     }
 
     & .intro {
@@ -543,9 +541,20 @@ footer {
 
         & article {
           flex-direction: row;
+          justify-content: space-between;
 
           .col-text {
             padding: var(--default-padding-4);
+            flex-basis: 50%;
+            flex-shrink: 0;
+          }
+
+          .col-img {
+            flex-basis: 400px;
+            margin-top: 0;
+            margin-bottom: var(--default-margin-3);
+            flex-shrink: 0;
+            flex-grow: 1;
           }
         }
       }
@@ -594,6 +603,8 @@ footer {
         border-width: 70px 0 0 1400px;
       }
     }
+
+
   }
 
 }
