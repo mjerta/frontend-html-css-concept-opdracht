@@ -450,6 +450,7 @@ main {
       flex-direction: column;
       color: #fff;
 
+
       h1, h5 {
         text-align: center;
       }
@@ -471,6 +472,10 @@ main {
       input, textarea {
         border-radius: 3px;
         padding: 1rem;
+
+        &::placeholder {
+          color: black;
+        }
       }
 
       button {
