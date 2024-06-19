@@ -119,6 +119,13 @@ button {
   z-index: 1;
 }
 
+.triangle-right {
+  /*width: 100%;*/
+  width: 0;
+  height: 0;
+  border-width: 8vw 0 0 100vw;
+}
+
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
@@ -141,6 +148,17 @@ header {
     background-image: url("./assets/noise-texture.png");
     width: 100%;
     height: 100%;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    /*border-width: 70px 0 0 1400px;*/
+    border-width: 5vw 0 0 100vw;
   }
 
   & nav {
@@ -208,8 +226,9 @@ main {
     color: var(--color-purple);
   }
 
+
   & section {
-    padding: var(--default-padding-6) var(--default-padding-1);
+    padding: 0 var(--default-padding-1);
     display: flex;
 
     & article {
@@ -220,6 +239,7 @@ main {
   & .intro {
     position: relative;
     flex-basis: var(--default-height-1);
+    padding-top: var(--default-padding-6);
     display: flex;
     justify-content: center;
     text-align: center;
@@ -227,7 +247,6 @@ main {
     &::after {
       position: absolute;
       content: 'hello';
-      top: var(--after-top-small);
       width: 100%;
       text-align: center;
       color: var(--color-light-grey);
@@ -266,11 +285,14 @@ main {
 
   .portfolio-wrapper {
     position: relative;
+    padding: var(--default-padding-6) 0;
+    padding-top: 10rem;
+    background-color: var(--color-light-grey);
 
     &::after {
       position: absolute;
       content: 'work';
-      top: var(--after-top-small);
+      top: 0;
       width: 100%;
       text-align: center;
       color: #fff;
@@ -278,8 +300,6 @@ main {
       font-weight: 700;
     }
 
-    padding: var(--default-padding-5) 0;
-    background-color: var(--color-light-grey);
 
     & .portfolio {
       flex-basis: auto; /* default value */
@@ -455,6 +475,7 @@ footer {
       }
     }
 
+
     .inner-cta {
       flex-basis: 80%;
     }
@@ -476,7 +497,6 @@ footer {
 
     .portfolio-wrapper {
       &::after {
-        top: var(--after-top-big);
         font-size: var(--font-size-words-big);
       }
 
@@ -514,4 +534,14 @@ footer {
       }
     }
   }
+}
+
+@media screen and (min-width: 1400px) {
+
+  header {
+    &::after {
+      border-width: 70px 0 0 1400px;
+    }
+  }
+
 }
