@@ -67,6 +67,12 @@ input, textarea {
   --default-margin-1: 5rem;
   --default-margin-2: 4rem;
   --default-margin-3: 3rem;
+
+  --font-size-words-small: 12rem;
+  --font-size-words-big: 25rem;
+  --after-top-small: 2rem;
+  --after-top-big: -4rem
+
 }
 
 a {
@@ -212,16 +218,29 @@ main {
   }
 
   & .intro {
+    position: relative;
     flex-basis: var(--default-height-1);
     display: flex;
     justify-content: center;
     text-align: center;
+
+    &::after {
+      position: absolute;
+      content: 'hello';
+      top: var(--after-top-small);
+      width: 100%;
+      text-align: center;
+      color: var(--color-light-grey);
+      font-size: var(--font-size-words-small);
+      font-weight: 700;
+    }
 
     & article {
       flex-basis: 50rem;
       flex-shrink: 1;
       flex-direction: column;
       align-items: center;
+      z-index: 1;
 
       & h3 {
         padding: var(--default-padding-1) 0;
@@ -251,13 +270,12 @@ main {
     &::after {
       position: absolute;
       content: 'work';
-      top: -8rem;
+      top: var(--after-top-small);
       width: 100%;
       text-align: center;
       color: #fff;
-      font-size: 25rem;
+      font-size: var(--font-size-words-small);
       font-weight: 700;
-      z-index: 1;
     }
 
     padding: var(--default-padding-5) 0;
@@ -271,13 +289,13 @@ main {
 
         & .col-text {
           flex-basis: 50%;
-          z-index: 2;
+          z-index: 1;
         }
 
         & .col-img {
           margin-top: var(--default-margin-2);
           flex-basis: 50%;
-          z-index: 2;
+          z-index: 1;
 
           & img {
             width: 100%;
@@ -322,22 +340,37 @@ main {
   }
 
   & .experience {
+    position: relative;
     flex-basis: var(--default-height-2);
     display: flex;
     justify-content: center;
-    padding: var(--default-padding-6) var(--default-padding-3);
+    padding: 10rem var(--default-padding-3);
     gap: 2rem;
     flex-wrap: wrap;
+
+    &::after {
+      position: absolute;
+      content: 'services';
+      top: 3rem;
+      width: 100%;
+      text-align: center;
+      color: var(--color-light-grey);
+      font-size: 7rem;
+      font-weight: 700;
+    }
+
 
     .card {
       flex-grow: 1;
       padding: var(--default-padding-3);
+      background-color: #fff;
       flex-basis: 23rem;
       min-height: 23rem;
       border: 1px solid var(--color-purple);
       flex-direction: column;
       color: var(--color-grey);
       box-shadow: 2px 7px 10px rgba(122, 122, 122, 0.4);
+      z-index: 1;
 
       .visual {
         & img {
@@ -433,8 +466,22 @@ footer {
       padding: var(--default-padding-4);
     }
 
+    & .intro {
+      &::after {
+        top: var(--after-top-big);
+        font-size: var(--font-size-words-big);
+
+      }
+    }
+
     .portfolio-wrapper {
+      &::after {
+        top: var(--after-top-big);
+        font-size: var(--font-size-words-big);
+      }
+
       & .portfolio {
+
 
         & article {
           flex-direction: row;
@@ -453,7 +500,12 @@ footer {
     }
 
     .experience {
-      padding: var(--default-padding-5);
+      padding: 15rem var(--default-padding-3);
+
+      &::after {
+        top: 0;
+        font-size: 20rem;
+      }
 
       .card {
         flex-basis: 20rem;
