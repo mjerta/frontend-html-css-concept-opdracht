@@ -157,7 +157,6 @@ header {
     content: '';
     border-style: solid;
     border-color: transparent transparent transparent white;
-    /*border-width: 70px 0 0 1400px;*/
     border-width: 5vw 0 0 100vw;
   }
 
@@ -244,6 +243,16 @@ main {
     justify-content: center;
     text-align: center;
 
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent var(--color-light-grey);
+      border-width: 5vw 0 0 100vw;
+    }
+
     &::after {
       position: absolute;
       content: 'hello';
@@ -288,6 +297,16 @@ main {
     padding: var(--default-padding-6) 0;
     padding-top: 10rem;
     background-color: var(--color-light-grey);
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent white;
+      border-width: 5vw 0 0 100vw;
+    }
 
     &::after {
       position: absolute;
