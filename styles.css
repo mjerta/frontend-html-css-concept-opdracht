@@ -119,6 +119,7 @@ button {
 header {
   padding: 0 var(--default-padding-1);
   background-color: var(--color-purple);
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
   min-height: var(--default-height-1);
   display: flex;
   flex-direction: column;
