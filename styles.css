@@ -137,6 +137,7 @@ header {
   & nav {
     display: flex;
     justify-content: center;
+    z-index: 1;
 
     & ul {
       display: flex;
