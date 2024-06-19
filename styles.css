@@ -63,6 +63,7 @@ input, textarea {
   --default-padding-3: 2rem;
   --default-padding-4: 4rem;
   --default-padding-5: 5rem;
+  --default-padding-6: 6rem;
   --default-margin-1: 5rem;
   --default-margin-2: 4rem;
   --default-margin-3: 3rem;
@@ -202,7 +203,7 @@ main {
   }
 
   & section {
-    padding: var(--default-padding-1);
+    padding: var(--default-padding-6) var(--default-padding-1);
     display: flex;
 
     & article {
@@ -245,6 +246,20 @@ main {
   }
 
   .portfolio-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: 'work';
+      top: -8rem;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 25rem;
+      font-weight: 700;
+      z-index: 1;
+    }
+
     padding: var(--default-padding-5) 0;
     background-color: var(--color-light-grey);
 
@@ -256,11 +271,13 @@ main {
 
         & .col-text {
           flex-basis: 50%;
+          z-index: 2;
         }
 
         & .col-img {
           margin-top: var(--default-margin-2);
           flex-basis: 50%;
+          z-index: 2;
 
           & img {
             width: 100%;
@@ -308,7 +325,7 @@ main {
     flex-basis: var(--default-height-2);
     display: flex;
     justify-content: center;
-    padding: var(--default-padding-5) var(--default-padding-3);
+    padding: var(--default-padding-6) var(--default-padding-3);
     gap: 2rem;
     flex-wrap: wrap;
 
@@ -411,8 +428,14 @@ footer {
   }
 
   main {
+
+    & section {
+      padding: var(--default-padding-4);
+    }
+
     .portfolio-wrapper {
       & .portfolio {
+
         & article {
           flex-direction: row;
 
