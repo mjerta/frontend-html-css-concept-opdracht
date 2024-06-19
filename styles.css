@@ -552,6 +552,8 @@ footer {
           .col-img {
             flex-basis: 400px;
             margin-top: 0;
+            padding-right: var(--default-padding-4);
+            padding-left: var(--default-padding-1);
             margin-bottom: var(--default-margin-3);
             flex-shrink: 0;
             flex-grow: 1;
