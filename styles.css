@@ -386,6 +386,16 @@ main {
     gap: 2rem;
     flex-wrap: wrap;
 
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent var(--color-purple);
+      border-width: 5vw 0 0 100vw;
+    }
+
     &::after {
       position: absolute;
       content: 'services';
