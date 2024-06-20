@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+/*css reset*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  /* Reset appearance */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+input, textarea {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  resize: none; /* Specifically for textarea */
+}
+
+:root {
+  --color-purple: #5722CD;
+  --color-blue: #4845E4;
+  --color-pink: #ED4385;
+  --color-black: #0C0C0C;
+  --color-light-purple: #F2F0FF;
+  --color-light-grey: #F2F0FF;
+  --color-grey: #7A7A7A;
+
+  /*default-unit*/
+  --default-height-1: 40rem;
+  --default-height-2: 45rem;
+  --default-padding-1: 1rem;
+  --default-padding-2: 1.5rem;
+  --default-padding-3: 2rem;
+  --default-padding-4: 4rem;
+  --default-padding-5: 5rem;
+  --default-padding-6: 6rem;
+  --default-margin-1: 5rem;
+  --default-margin-2: 4rem;
+  --default-margin-3: 3rem;
+
+  --font-size-words-small: 12rem;
+  --font-size-words-big: 25rem;
+  --after-top-small: 2rem;
+  --after-top-big: -4rem
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+.wrapper {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+button {
+  padding: var(--default-padding-2) var(--default-padding-3);
+  background-color: var(--color-pink);
+  border-radius: 2rem;
+  box-shadow: 0 2px 10px var(--color-black);
+  align-self: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.triangle-right {
+  /*width: 100%;*/
+  width: 0;
+  height: 0;
+  border-width: 8vw 0 0 100vw;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+header {
+  padding: 0 var(--default-padding-1);
+  background: linear-gradient(90deg, var(--color-blue), var(--color-purple));
+  min-height: var(--default-height-1);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    background-image: url("./assets/noise-texture.png");
+    width: 100%;
+    height: 100%;
+  }
+
+  &::after {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: '';
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    border-width: 5vw 0 0 100vw;
+  }
+
+  & nav {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+
+    & ul {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-evenly;
+      column-gap: 3rem;
+      list-style: none;
+      font-weight: 800;
+
+      & li {
+        padding: var(--default-padding-3) 0;
+      }
+    }
+  }
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .inner-cta {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin-top: var(--default-margin-1)
+    }
+
+    h2 {
+      padding: var(--default-padding-2) 0;
+      font-weight: 300;
+    }
+
+    .visual {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      img {
+        height: 7em;
+      }
+
+    }
+  }
+}
+
+
+/* --------------- 4.2 Main ------------------- */
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: var(--color-purple);
+  }
+
+  .view-project {
+    position: relative;
+  }
+
+
+  .view-project::before {
+    position: absolute;
+    content: '';
+    right: -20px;
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background: var(--color-purple);
+    transform: scale(1);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+  }
+
+  .view-project:hover::before {
+    transform: scaleX(3);
+  }
+
+
+  & section {
+    padding: 0 var(--default-padding-1);
+    display: flex;
+
+    & article {
+      display: flex;
+    }
+  }
+
+  & .intro {
+    position: relative;
+    flex-basis: var(--default-height-1);
+    padding-top: var(--default-padding-6);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent var(--color-light-grey);
+      border-width: 5vw 0 0 100vw;
+    }
+
+    &::after {
+      position: absolute;
+      content: 'hello';
+      width: 100%;
+      text-align: center;
+      color: var(--color-light-grey);
+      font-size: var(--font-size-words-small);
+      font-weight: 700;
+    }
+
+    & article {
+      flex-basis: 50rem;
+      flex-shrink: 1;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+
+      & h3 {
+        padding: var(--default-padding-1) 0;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--color-purple);
+      }
+
+      & h3:first-of-type {
+        padding: 0;
+        margin-top: var(--default-margin-1);
+      }
+
+      & h3:last-of-type {
+        padding: var(--default-padding-1) 0 0 0;
+      }
+
+      & p {
+        margin-top: var(--default-margin-2);
+      }
+    }
+  }
+
+  .portfolio-wrapper {
+    position: relative;
+    padding: var(--default-padding-6) 0;
+    padding-top: 10rem;
+    background-color: var(--color-light-grey);
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent white;
+      border-width: 5vw 0 0 100vw;
+    }
+
+    &::after {
+      position: absolute;
+      content: 'work';
+      top: 0;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: var(--font-size-words-small);
+      font-weight: 700;
+    }
+
+
+    & .portfolio {
+      flex-basis: auto; /* default value */
+
+      & article {
+        flex-direction: column-reverse;
+
+        & .col-text {
+          z-index: 1;
+        }
+
+        & .col-img {
+          margin-top: var(--default-margin-3);
+          z-index: 1;
+
+          & img {
+            width: 100%;
+            box-shadow: 0 7px 20px var(--color-grey);
+          }
+        }
+
+        h2 {
+          position: relative;
+          padding: var(--default-padding-2) 0;
+        }
+
+        h2::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          height: 5px;
+          width: 100%;
+          background: url("./assets/squiggle_line.svg") no-repeat;
+          background-size: contain;
+        }
+
+        p {
+          padding: var(--default-padding-4) 0;
+          font-weight: 500;
+        }
+
+        a {
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    & .portfolio:nth-of-type(1) {
+      & article {
+        & .col-img {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  & .experience {
+    position: relative;
+    flex-basis: var(--default-height-2);
+    display: flex;
+    justify-content: center;
+    padding: 10rem var(--default-padding-3);
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      content: '';
+      border-style: solid;
+      border-color: transparent transparent transparent var(--color-purple);
+      border-width: 5vw 0 0 100vw;
+    }
+
+    &::after {
+      position: absolute;
+      content: 'services';
+      top: 3rem;
+      width: 100%;
+      text-align: center;
+      color: var(--color-light-grey);
+      font-size: 7rem;
+      font-weight: 700;
+    }
+
+
+    .card {
+      flex-grow: 1;
+      padding: var(--default-padding-3);
+      background-color: #fff;
+      flex-basis: 23rem;
+      /* I want to use this flex-basis espacially when using the flex-wrap so with every wrap it will go back to this size
+            */
+      min-height: 23rem;
+      max-width: 29rem; /* I want this element to grow but not grow more then this */
+      border: 1px solid var(--color-purple);
+      flex-direction: column;
+      color: var(--color-grey);
+      box-shadow: 2px 7px 10px rgba(122, 122, 122, 0.4);
+      z-index: 1;
+
+      .visual {
+        & img {
+          height: 4rem;
+        }
+      }
+
+      h2 {
+        padding: var(--default-padding-1) 0;
+        color: var(--color-purple);
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  & .feedback {
+    background-color: var(--color-purple);
+    flex-basis: var(--default-height-2);
+    display: flex;
+    justify-content: center;
+
+    form {
+      margin-top: var(--default-margin-1);
+      flex-basis: 50rem;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+
+
+      h1, h5 {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h5 {
+        padding: var(--default-padding-1) 0;
+        font-weight: 300;
+      }
+
+      label {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+
+      input, textarea {
+        border-radius: 3px;
+        padding: 1rem;
+
+        &::placeholder {
+          color: black;
+        }
+      }
+
+      button {
+        margin: var(--default-padding-3) 0;
+        padding: var(--default-padding-2) var(--default-padding-5);
+      }
+    }
+  }
+}
+
+/* --------------- 4.3 Footer ------------------- */
+
+footer {
+  background-color: var(--color-black);
+  padding: var(--default-padding-1) 0;
+  color: #fff;
+  display: flex;
+  min-width: 100vw;
+  justify-content: center;
+}
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 16px;
+  }
+
+  header {
+    & nav {
+      & ul {
+        justify-content: flex-end;
+      }
+    }
+
+
+    .inner-cta {
+      flex-basis: 80%;
+    }
+  }
+
+  main {
+
+    & section {
+      padding: var(--default-padding-1);
+    }
+
+    & .intro {
+      &::after {
+        top: var(--after-top-big);
+        font-size: var(--font-size-words-big);
+
+      }
+    }
+
+    .portfolio-wrapper {
+      &::after {
+        font-size: var(--font-size-words-big);
+      }
+
+      & .portfolio {
+
+
+        & article {
+          flex-direction: row;
+          justify-content: space-between;
+
+          .col-text {
+            padding: var(--default-padding-4);
+            flex-basis: 50%;
+            flex-shrink: 0;
+          }
+
+          .col-img {
+            flex-basis: 400px;
+            margin-top: 0;
+            padding-right: var(--default-padding-4);
+            padding-left: var(--default-padding-1);
+            margin-bottom: var(--default-margin-3);
+            flex-shrink: 0;
+            flex-grow: 1;
+          }
+        }
+      }
+
+      & .portfolio:nth-child(even) {
+        article {
+          flex-direction: row-reverse;
+
+          .col-img {
+
+            padding-right: var(--default-padding-1);
+            padding-left: var(--default-padding-4);
+          }
+        }
+      }
+    }
+
+    .experience {
+      padding: 15rem var(--default-padding-3);
+
+      &::after {
+        top: 0;
+        font-size: 20rem;
+      }
+
+      .card {
+        flex-basis: 20rem;
+        flex-grow: 1;
+        min-height: 20rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+
+  header {
+    &::after {
+      border-width: 70px 0 0 1400px;
+    }
+  }
+
+  main {
+    & .intro {
+      &::before {
+        border-width: 70px 0 0 1400px;
+      }
+    }
+
+    & .experience {
+      &::before {
+        border-width: 70px 0 0 1400px;
+      }
+    }
+
+
+  }
+
+}
