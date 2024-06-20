@@ -586,6 +586,12 @@ footer {
       & .portfolio:nth-child(even) {
         article {
           flex-direction: row-reverse;
+
+          .col-img {
+
+            padding-right: var(--default-padding-1);
+            padding-left: var(--default-padding-4);
+          }
         }
       }
     }
