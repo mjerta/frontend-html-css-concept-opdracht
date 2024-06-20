@@ -225,6 +225,28 @@ main {
     color: var(--color-purple);
   }
 
+  .view-project {
+    position: relative;
+  }
+
+
+  .view-project::before {
+    position: absolute;
+    content: '';
+    right: -20px;
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background: var(--color-purple);
+    transform: scale(1);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+  }
+
+  .view-project:hover::before {
+    transform: scaleX(3);
+  }
+
 
   & section {
     padding: 0 var(--default-padding-1);
